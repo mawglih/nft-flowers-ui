@@ -1,6 +1,9 @@
 import React, { useState} from 'react';
 import Layout from './ui/regular/Layout';
+import List from './ui/regular/List';
+import WalletBar from './ui/regular/WalletBar';
 import './App.css';
+
 
 const App = () => {
   const [value, setValue] = useState('');
@@ -11,6 +14,7 @@ const App = () => {
   }
   return (
     <Layout>
+      <WalletBar />
       <div className="form-container">
         <form className="form-mint" onSubmit={e => onFormSubmit(e)}>
             <label>
@@ -24,6 +28,7 @@ const App = () => {
             <button className="form-button" type='submit'>Submit</button>
         </form>
     </div>
+    <List/>
   </Layout> 
   );
 }
