@@ -7,7 +7,7 @@ export default function Layout({ children}) {
     return(
         <Web3Provider>
             <div>
-                <NavBar title="Flowers NFT"/>
+                <NavBar title="1-800-Flowers NFT"/>
                 <div>
                     {children}
                 </div>

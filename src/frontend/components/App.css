@@ -7,3 +7,24 @@
   height: 2rem;
   padding: 0.5rem;
 }
+
+.btn-install {
+  background-color: brown;
+  color: white;
+}
+.btn-connect {
+  background-color: blue;
+  color: white;
+}
+.btn {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.btn-loading {
+  background-color: green;
+  color: white;
+}
+.btn:hover,
+.btn:disabled {
+  opacity: 50%;
+}

@@ -1,8 +1,4 @@
-import { useAccount as createUseAccount } from "./useAccount";
-
-const DEFAULT_HOOKS = {
-    useAccount: () => ({ account: null })
-}
+import { handler as createUseAccount } from "./useAccount";
 
 export const setupHooks = web3 => {
     return {
