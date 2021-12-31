@@ -83,3 +83,26 @@
   bottom: -9999px;
   margin: auto;
 }
+.wallet-container {
+  display: flex;
+  padding: 30px 50px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.wallet-context {
+  display: flex;
+  flex-direction: column;
+}
+.purchase-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.purchase-link {
+  text-decoration: none;
+  text-align: center;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+}
