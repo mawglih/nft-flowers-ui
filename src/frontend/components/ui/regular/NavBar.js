@@ -1,5 +1,5 @@
 import { useWeb3 } from '../../providers';
-import { useAccount } from '../../../hooks/web3/useAccount';
+import { useAccount } from '../../../hooks/web3/';
 import '../../App.css';
 import Button from '../common/button';
 

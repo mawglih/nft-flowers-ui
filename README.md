@@ -1,18 +1,30 @@
-# Getting Started with Create React App
+# nft-flowers-ui
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Please run npm install on the terminal to download the appropriate packages already defined to the package.json file.
+Make sure you are in the source file.
 
-## Available Scripts
+!!Download the following additionally !!
+
+1. Ganache
+2. Truffle (global installation)
+3. Metamask.io (hooked up on the browser), otherwise you will be prompted in the browser
+
+For truffle tests and console please consult the official Truffle documentaion for updates.
+
+**To run the development server on a local host scripts:** npm run start
 
 In the project directory, you can run:
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3030](http://localhost:3030) to view it in your browser.
 
 The page will reload when you make changes.\
-You may also see any lint errors in the console.
+
+Please note - project is not designed to work in default port 3000
+
+## Available Scripts
 
 ### `npm test`
 
