@@ -1,7 +1,25 @@
 import { useWeb3 } from '../../providers';
+import { NavLink } from 'react-router-dom';
 import { useAccount } from '../../../hooks/web3/';
-import '../../App.css';
 import Button from '../common/button';
+// import ActiveLink from '../common/activeLink';
+import '../../App.css';
+
+  const LINKS = [
+    {
+      href: "/",
+      value: "Home",
+    },
+        {
+      href: "/marketplace",
+      value: "Market Place",
+    },
+        {
+      href: "/contactus",
+      value: "Contact Us",
+    },
+  ]
+
 
 const NavBar = ({
     title,
@@ -12,7 +30,21 @@ const NavBar = ({
     console.log('isAdmin', account.isAdmin);
     console.log('all web3api', useWeb3());
     return (
-        <div className="navbar-container">
+        <div className='navbar'>
+            <div className='navbar-links'>
+                {
+                    LINKS.map((item, id) => {
+                        return(
+                            <div key={id}>
+                                <NavLink to={item.href} className={({ isActive }) => isActive ? "active-navlink" : undefined}>
+                                  {item.value}
+                                </NavLink>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+            <div className="navbar-container">
             <div className="navbar-title">{title}</div>
             <div className="navbar-account">{account.data}</div>
             <div className='navbar-btn'>
@@ -46,6 +78,8 @@ const NavBar = ({
                 }
             </div>
         </div>
+        </div>
+        
     )
 }
 

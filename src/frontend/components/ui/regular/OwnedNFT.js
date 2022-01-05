@@ -1,8 +1,10 @@
-const OwnedNFT = () => {
+import Breadcrumbs from "../common/breadcrumbs";
+
+const OwnedNFT = (props) => {
   return (
-    <>
-      Owned NFT
-    </>
+    <div>
+      <h1>Owned NFT</h1>
+    </div>
   )
 }
 

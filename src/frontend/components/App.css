@@ -2,10 +2,28 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
-    color: aliceblue;
     height: 2rem;
     padding: 0.5rem;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: aliceblue;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: .5rem;
+}
+
+.navbar-links a {
+    color: antiquewhite;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .btn-install {
@@ -205,8 +223,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 10px;
+}
+
+.modal-top-title {
+    display: flex;
+    flex-basis: 60%;
 }
 
 .modal-btn-container {
@@ -272,6 +295,25 @@
     margin-right: 10px;
 }
 
+.modal-image {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.title1,
+.title2 {
+    display: block;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.modal-image>img {
+    width: 100%;
+}
+
 
 /* end */
 
@@ -291,7 +333,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 50px;
+    padding-right: 8rem;
+    width: 100%;
 }
 
 .breadcrumbs-list {
@@ -313,4 +356,20 @@
 
 .breadcrumbs-item:not(:last-child) {
     border-right: 1px solid black;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-links .active-navlink {
+    color: yellow;
+}
+
+.active-breadcrumbs {
+    font-size: 105%;
+    font-weight: bolder;
 }

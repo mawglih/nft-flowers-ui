@@ -1,8 +1,8 @@
-const AllOrders = () => {
+const AllOrders = props => {
   return (
-    <>
-      All orders
-    </>
+    <div>
+      <h1>ALL orders</h1>
+    </div>
   )
 }
 

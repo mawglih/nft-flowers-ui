@@ -1,4 +1,5 @@
 import {useAccount, useNetwork } from '../../../hooks/web3';
+import { Link } from 'react-router-dom';
 import { useEthPrice } from '../../../hooks/eth/useEthPrice';
 import { useWeb3 } from '../../providers';
 import EthRates from '../common/ethRates';
@@ -17,9 +18,9 @@ const WalletBar = () => {
       <div className="wallet-context">
         <h1>Hello, {account.data ? account.data : "Anonymous person"}</h1>
         <div className="purchase-container">
-            <span type="button" className="btn btn-connect"><a href="#"  className="purchase-link">
+            <span type="button" className="btn btn-connect"><Link to="/"  className="purchase-link">
             Learn how to purchase
-            </a></span>
+            </Link></span>
         <div>
             {requireInstall ? (
                 <div className="require-install"><h5>Please install Metamask</h5></div>

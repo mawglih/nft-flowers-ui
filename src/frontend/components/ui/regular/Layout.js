@@ -1,6 +1,7 @@
 import React from 'react';
 import { Web3Provider } from '../../providers';
 import NavBar from './NavBar';
+import WalletBar from './WalletBar'
 import Footer from './Footer';
 
 export default function Layout({ children}) {
@@ -8,6 +9,7 @@ export default function Layout({ children}) {
         <Web3Provider>
             <div>
                 <NavBar title="1-800-Flowers NFT"/>
+                <WalletBar />
                 <div>
                     {children}
                 </div>

@@ -1,13 +1,8 @@
-import { Route, Switch, useRouteMatch } from "react-router-dom";
-import AllOrders from "../regular/AllOrders";
-import OwnedNFT from "../regular/OwnedNFT";
-import ActiveLink from "./activeLink";
+import { NavLink } from "react-router-dom";
 
 const Breadcrumbs = ({
-  links
+  links, 
 }) => {
-
-  let { path, url } = useRouteMatch();
 
   return (
     <>
@@ -16,17 +11,20 @@ const Breadcrumbs = ({
         {links.map(item => {
           return(
             <li className="breadcrumbs-item" key={item.href}>
-              <ActiveLink href={url+item.href}>
-                <a>
-                  {item.value}
-                </a>
-              </ActiveLink>
+              <NavLink 
+                to={item.href}
+                className={({ isActive }) => isActive ? "active-breadcrumbs" : undefined}
+                end
+              >
+                {item.value}
+              </NavLink>
             </li>
           )
         })}
         
       </ol>
     </nav>
+    
     </>
   )
 }
