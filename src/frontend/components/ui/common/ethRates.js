@@ -1,4 +1,5 @@
 import '../../App.css';
+import Loader from './loader';
 
 const EthRates = ({
     eth,
@@ -7,14 +8,19 @@ const EthRates = ({
 
   return (
     <div className="rates-container">
-      <div>
-        <p className='rates-title'>Current ETH Price (USD)</p>
-        <p className='rates-title'>Current USD Price (ETH)</p>
-        </div>
+      { eth && eth.data ?
+      <Loader /> :
+      (<>
         <div>
-        <p className='rates-price'>1 ETH = {eth}$</p>
-        <p className='rates-price'>1 $ = {dol} ETH</p>
+          <p className='rates-title'>Current ETH Price (USD)</p>
+          <p className='rates-title'>Current USD Price (ETH)</p>
+          </div>
+          <div>
+          <p className='rates-price'>1 ETH = {eth}$</p>
+          <p className='rates-price'>1 $ = {dol} ETH</p>
         </div>
+      </>
+      )}
     </div>
   )
 }

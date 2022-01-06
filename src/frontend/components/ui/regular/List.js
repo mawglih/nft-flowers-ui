@@ -10,6 +10,19 @@ const List = () => {
   const { canPurchase } = useWallet();
   const [modalOpen, setModalOpen]= useState(null);
 
+  const [order, setOrder] = useState({
+    price: "",
+    email: "",
+    confirmationEmail: "",
+    aggreeOnTerms: false,
+  });
+
+  const submitForm = async data => {
+    console.log('order', data);
+    setOrder({...data});
+    modalClose();
+  }
+  
   const openModal  = item => {
     console.log('item in List clicked', item);
     setModalOpen(item);
@@ -39,7 +52,7 @@ const List = () => {
         </div>
       </div>
       <Modal isOpen={modalOpen}>
-        <ModalOrder obj={modalOpen} modalClose={modalClose}/>
+        <ModalOrder obj={modalOpen} modalClose={modalClose} submitForm={submitForm} />
       </Modal>
     </>
     

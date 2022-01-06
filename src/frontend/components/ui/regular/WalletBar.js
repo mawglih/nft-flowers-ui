@@ -1,4 +1,4 @@
-import {useAccount, useNetwork } from '../../../hooks/web3';
+import {useAccount, useFlowContract, useNetwork } from '../../../hooks/web3';
 import { Link } from 'react-router-dom';
 import { useEthPrice } from '../../../hooks/eth/useEthPrice';
 import { useWeb3 } from '../../providers';
@@ -7,12 +7,12 @@ import EthRates from '../common/ethRates';
 const WalletBar = () => {
     const { account } = useAccount();
     const { network } = useNetwork();
+    const { contract: { data: myContract } } = useFlowContract();
     const {eth} = useEthPrice();
-
-    console.log('eth: ', eth.data);
     const { requireInstall } = useWeb3();
     console.log('account in Wallet', account);
     console.log('network in Wallet', network);
+    console.log('contract in Wallet', myContract);
   return (
     <section className="wallet-container">
       <div className="wallet-context">

@@ -11,7 +11,7 @@ export const handler =  (web3, provider) => () => {
     });
 
     useEffect(() => {
-        provider && provider.on("accountChnaged", accounts => mutate(accounts[0] ?? null));
+        provider && provider.on("accountChaged", accounts => mutate(accounts[0] ?? null));
     }, [provider])
     return { account: {
         data,

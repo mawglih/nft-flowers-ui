@@ -2,12 +2,13 @@ import '../../App.css'
 const Button = ({
   children, 
   classname,
+  type,
   ...rest
 }) => {
   return (
     <button 
       {...rest}
-      type="button" 
+      type={type} 
       className={`btn ${classname}`}
       >
       {children}
