@@ -1430,7 +1430,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-31T17:12:10.199Z",
+  "updatedAt": "2022-01-08T23:14:30.027Z",
   "devdoc": {
     "events": {
       "Approval(address,address,uint256)": {

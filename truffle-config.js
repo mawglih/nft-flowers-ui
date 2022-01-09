@@ -33,7 +33,7 @@ module.exports = {
   },
 
   contracts_directory: './src/backend/contracts',
-  contracts_build_directory: './src/backend/abis',
+  contracts_build_directory: './public/contracts/abis',
 
   compilers: {
     solc: {

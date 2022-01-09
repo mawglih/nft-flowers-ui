@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState, useMemo } from "react";
 import detectEthereumProvider from "@metamask/detect-provider";
 import Web3 from "web3";
 import { setupHooks } from "./hooks/setupHooks";
+import { loadContract, getFromAddress, getAllAddresses, getAbis } from "./contract/loadContract";
 
 const Web3Context = createContext(null)
 
@@ -10,6 +11,9 @@ export default function Web3Provider({children}) {
     provider: null,
     web3: null,
     contract: null,
+    abis:null,
+    get: null,
+    ownerAddress: 0,
     isLoading: true
   });
 
@@ -19,16 +23,22 @@ export default function Web3Provider({children}) {
     const loadProvider = async () => {
     const provider = await detectEthereumProvider();
     if (provider) {
-      console.log('provider', provider);
-      console.log('ether wallet connected');
-      const web3 = new Web3(provider)
+      const web3 = new Web3(provider);
+      const contract = await loadContract('KryptoFlow', web3);
+      const abis = await getAbis('KryptoFlow');
+      const fromAddress = await getFromAddress('KryptoFlow');
+      const allAddresses = await getAllAddresses(web3);
+      console.log('in web3 contract', contract);
+      console.log('in web3 addresses', allAddresses);
       setWeb3Api({
         provider,
         web3,
-        contract: null,
-        isLoading: false
+        contract,
+        abis,
+        allAddresses,
+        fromAddress,
+        isLoading: false,
       });
-      console.log('web3', web3);
     } else {
       setWeb3Api(api => ({...api, isLoading: false}))
       console.error("Please, install Metamask.")
